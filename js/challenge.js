@@ -59,17 +59,19 @@ plus.addEventListener('click', function(){
 let times = [];
 
 heart.addEventListener('click', function(){
-    let likes = document.getElementsByClassName('likes')[0];
-    let li = document.createElement('li');
-    const words = `${time} has been liked`
+    let like = document.querySelector(".likes")
 
-    times.push(time);
-    
-
-    if (getOccurrence(times, time) > 1){
-        debugger
-        li.innerText = words + ` ${getOccurrence.length} times`;
-        likes.appendChild(li);
+    if(document.getElementById(`Li${counter}`) == null){
+      let li = document.createElement("li");
+      li.setAttribute("id", `Li${counter}`)
+      li.innerHTML = `${counter} have this many likes:1`
+      like.appendChild(li)
+    }
+    else {
+      let li = document.getElementById(`Li${counter}`)
+      let splitted = parseInt(li.innerHTML.split(":")[1]) + 1
+      li.innerHTML = `${counter} have this many likes:${splitted}`
+      like.appendChild(li)
     }
     
 });
