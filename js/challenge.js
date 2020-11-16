@@ -57,7 +57,7 @@ function addLike(){
 
 // timer adds +1 to counter per second
 
-window.setInterval(addOneToCounter, 1000);
+let timer = window.setInterval(addOneToCounter, 1000);
 
 function addOneToCounter(){
     counter.innerText = parseInt(counter.innerText) + 1;
@@ -82,17 +82,25 @@ plusButton.addEventListener('click', addOneToCounter)
 let pauseButton = document.getElementById('pause');
 
 pauseButton.addEventListener('click', (e) => {
-    if (){
-
+    if (pauseButton.innerText == "pause"){
+        pauseCounter();
     } else {
-
+        resumeCounter();
     };
 });
 
 function pauseCounter(){
-
+    pauseButton.innerText = "resume";
+    clearInterval(timer);
+    minusButton.disabled = true;
+    plusButton.disabled = true;
+    likeButton.disabled = true;
 };
 
 function resumeCounter(){
-
+    pauseButton.innerText = "pause";
+    timer = window.setInterval(addOneToCounter, 1000);
+    minusButton.disabled = false;
+    plusButton.disabled = false;
+    likeButton.disabled = false;
 };
