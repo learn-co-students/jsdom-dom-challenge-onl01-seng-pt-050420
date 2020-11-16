@@ -81,6 +81,8 @@ plusButton.addEventListener('click', addOneToCounter)
 
 let pauseButton = document.getElementById('pause');
 
+let submitButton = document.getElementById('submit');
+
 pauseButton.addEventListener('click', (e) => {
     if (pauseButton.innerText == "pause"){
         pauseCounter();
@@ -95,6 +97,7 @@ function pauseCounter(){
     minusButton.disabled = true;
     plusButton.disabled = true;
     likeButton.disabled = true;
+    submitButton.disabled = true;
 };
 
 function resumeCounter(){
@@ -103,4 +106,5 @@ function resumeCounter(){
     minusButton.disabled = false;
     plusButton.disabled = false;
     likeButton.disabled = false;
+    submitButton.disabled = false;
 };
