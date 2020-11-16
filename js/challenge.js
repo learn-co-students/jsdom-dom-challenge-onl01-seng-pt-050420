@@ -27,7 +27,7 @@ let likeButton = document.getElementById('heart');
 
 let likeList = document.getElementsByClassName('likes')[0];
 
-likeButton.addEventListener('click', (e) =>{
+likeButton.addEventListener('click', (e) => {
     if (document.getElementById(counter.innerText)){
         addLike();
     } else {
@@ -79,3 +79,20 @@ plusButton.addEventListener('click', addOneToCounter)
 
 // pause/resume function for timer
 
+let pauseButton = document.getElementById('pause');
+
+pauseButton.addEventListener('click', (e) => {
+    if (){
+
+    } else {
+
+    };
+});
+
+function pauseCounter(){
+
+};
+
+function resumeCounter(){
+
+};
