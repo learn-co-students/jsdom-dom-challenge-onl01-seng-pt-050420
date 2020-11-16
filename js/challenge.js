@@ -21,14 +21,14 @@ function addComment(){
 
 // like button function
 
-let counter = document.getElementById('counter').innerText;
+let counter = document.getElementById('counter');
 
 let likeButton = document.getElementById('heart');
 
 let likeList = document.getElementsByClassName('likes')[0];
 
 likeButton.addEventListener('click', (e) =>{
-    if (document.getElementById(counter)){
+    if (document.getElementById(counter.innerText)){
         addLike();
     } else {
         newLike();
@@ -37,7 +37,7 @@ likeButton.addEventListener('click', (e) =>{
 
 function newLike(){
     let li = document.createElement('li');
-    li.setAttribute('id', counter);
+    li.setAttribute('id', counter.innerHTML);
     let span = document.createElement('span');
     span.innerText = 1;
     li.appendChild(span);
@@ -46,7 +46,7 @@ function newLike(){
 };
 
 function addLike(){
-    let like = document.getElementById(counter);
+    let like = document.getElementById(counter.innerHTML);
     let element = like.children[0];
     element.innerText = parseInt(element.innerText) + 1;
     if (element.innerText == 2){
@@ -56,4 +56,26 @@ function addLike(){
 
 
 // timer adds +1 to counter per second
+
+window.setInterval(addOneToCounter, 1000);
+
+function addOneToCounter(){
+    counter.innerText = parseInt(counter.innerText) + 1;
+};
+
+
+// increment/decrement counter function
+
+function subtractOneFromCounter(){
+    counter.innerText = parseInt(counter.innerText) - 1;
+};
+
+let minusButton = document.getElementById('minus');
+let plusButton = document.getElementById('plus');
+
+minusButton.addEventListener('click', subtractOneFromCounter)
+plusButton.addEventListener('click', addOneToCounter)
+
+
+// pause/resume function for timer
 
